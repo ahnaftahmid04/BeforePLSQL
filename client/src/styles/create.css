@@ -1,0 +1,95 @@
+.createHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.createTitle {
+    margin: 0;
+}
+
+.createOptionsContainer {
+    padding-top: 15px;
+}
+
+.createContainer {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.createForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.topicNameInput {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #1f2124;
+    color: #fff;
+    border: none;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.topicNameInput:focus {
+    outline: none;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #1f2124;
+    color: #fff;
+    border: none;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.postingOptionsContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    margin-bottom: 15px;
+}
+
+.postingOption {
+    margin-right: 15px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.postingOptionsContainer input {
+    margin-right: 5px;
+    align-self: center; /* Align radio buttons vertically in the center */
+}
+
+.postingHeader {
+    margin-right: 15px;
+}
+
+button {
+    background-color: rgb(137, 116, 243);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: rgb(94, 76, 161);
+}

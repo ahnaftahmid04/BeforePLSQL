@@ -1,0 +1,61 @@
+.homeHeader {
+    max-height: 75px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homeTitle {
+    color: #fff;
+    margin: 0;
+}
+
+.allThreadsContainer {
+    max-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 0;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+/* Webkit (Chrome, Safari) scrollbar styling */
+.allThreadsContainer::-webkit-scrollbar {
+    width: 12px;
+}
+
+.allThreadsContainer::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+    border-radius: 8px; /* Rounded corners of the thumb */
+}
+
+.allThreadsContainer::-webkit-scrollbar-track {
+    background-color: #151618; /* Color of the track */
+}
+
+/* Firefox scrollbar styling */
+.allThreadsContainer {
+    scrollbar-width: thin;
+}
+
+.allThreadsContainer::-moz-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+    border-radius: 8px; /* Rounded corners of the thumb */
+}
+
+.allThreadsContainer::-moz-scrollbar-track {
+    background-color: #151618; /* Color of the track */
+}
+
+.threadOptionsContainer {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#threadOptions {
+    padding: 5px;
+    border-radius: 5px;
+}

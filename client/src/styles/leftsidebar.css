@@ -1,0 +1,78 @@
+.leftsidebar {
+    background-color: #151618;
+    min-width: 230px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftsidebarHeader {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+.leftsidebarLogo {
+    width: 40px; 
+    margin-right: 16px; 
+}
+
+.leftHeaderTitle {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.leftsidebarLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 15px;
+    color: #e3e2e2; 
+    cursor: pointer;
+    padding: 10px;
+}
+
+.leftsidebarLink:hover {
+    background-color: rgb(137, 116, 243);
+    border-radius: 10px;
+}
+
+.leftsidebarIcon {
+    width: 25px; 
+    margin-right: 16px; 
+}
+
+.leftsidebarTitle {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.leftsidebarFooter {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 30px;
+    color: #e3e2e2; 
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.leftsidebarFooter:hover {
+    background-color: rgb(137, 116, 243);
+    border-radius: 10px;
+}
+
+.leftsidebarLink.active {
+    background-color: rgb(137, 116, 243);
+    border-radius: 10px;
+}

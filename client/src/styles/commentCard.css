@@ -1,0 +1,31 @@
+.commentUser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.commentUserName {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.commentDate {
+    font-size: 14px;
+    color: #777;
+    margin-left: 10px;
+}
+
+.commentBody {
+    font-size: 16px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.comment {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,83 @@
+.profileHeader {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileName {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profileUserName {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.profileLocation {
+    font-size: 18px;
+}
+
+.profileStats {
+    display: flex;
+    gap: 30px;
+}
+
+.profileStat {
+    display: flex;
+}
+
+.profileStatNumber {
+    margin-right: 5px;
+}
+
+.profileButtons {
+    width: 100px;
+}
+
+.profileNavbar {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 40px;
+}
+
+.profileNavbar button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 18px;
+}
+
+.profileNavbar button.activeTab {
+    background-color: rgb(137, 116, 243);
+    color: white;
+}
+
+.mutualsContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.mutualsButton {
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.mutualsName {
+    font-size: 18px;
+    margin: 0;
+}

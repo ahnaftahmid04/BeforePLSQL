@@ -1,0 +1,101 @@
+.register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #111214;
+    color: #fff;
+}
+
+.registerWrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 10px;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.registerLeft {
+    flex: 1;
+    background-color: rgb(105, 27, 174);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.registerLogo {
+    font: optional;
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.registerDesc {
+    font-size: 20px;
+}
+
+.registerSpan {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.registerButton {
+    width: 50%;
+    background-color: white;
+    border: none;
+    padding: 15px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 0;
+}
+
+.registerRight {
+    flex: 1;
+    padding: 50px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.registerHeader {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.registerBox {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.registerInput {
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(183, 182, 182);
+}
+
+.registerLoginButton {
+    width: 50%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgb(105, 27, 174);
+    margin-top: 20px;
+}
+
+.link {
+    text-decoration: none;
+}

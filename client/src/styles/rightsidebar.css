@@ -1,0 +1,148 @@
+.rightsidebar {
+    width: 100%;
+    background-color: #151618;
+    padding: 0 20px;
+    overflow-y: auto;
+}
+
+.userProfile {
+    text-align: right;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.userDetailsContainer {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.actualName {
+    margin: 0;
+    cursor: pointer;
+    color: #fff;
+}
+
+.rightUserName {
+    margin: 5px 0;
+    color: #777;
+}
+
+.trendingTopics {
+    margin-top: 20px;
+}
+
+.trendingTitle {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.trendingTopic {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.topicDetails {
+    flex: 1;
+}
+
+.rightTopicName {
+    margin: 0;
+}
+
+.topicThreads {
+    margin: 5px 0;
+    color: #777;
+}
+
+.topicLink {
+    text-align: right;
+}
+
+.topicButton,
+.followButton {
+    width: 70px;
+    height: 25px;
+    background-color: rgb(137, 116, 243);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.suggestedUsers {
+    margin-top: 30px;
+}
+
+.suggestedTitle {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.suggestedUser {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.userDetails {
+    flex: 1;
+}
+
+.mindName {
+    margin: 0;
+}
+
+.mindMutuals {
+    margin: 5px 0;
+    color: #777;
+}
+
+.trendingContent,
+.suggestedContent {
+    max-height: 250px; 
+    overflow-y: auto;
+    padding-right: 20px;
+}
+
+/* Webkit (Chrome, Safari) scrollbar styling */
+.trendingContent::-webkit-scrollbar,
+.suggestedContent::-webkit-scrollbar {
+    width: 12px;
+}
+
+.trendingContent::-webkit-scrollbar-thumb,
+.suggestedContent::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+    border-radius: 8px; /* Rounded corners of the thumb */
+}
+
+.trendingContent::-webkit-scrollbar-track,
+.suggestedContent::-webkit-scrollbar-track {
+    background-color: #151618; /* Color of the track */
+}
+
+/* Firefox scrollbar styling */
+.trendingContent {
+    scrollbar-width: thin;
+}
+
+.trendingContent::-moz-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+    border-radius: 8px; /* Rounded corners of the thumb */
+}
+
+.trendingContent::-moz-scrollbar-track {
+    background-color: #151618; /* Color of the track */
+}
