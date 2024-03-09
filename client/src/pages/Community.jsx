@@ -132,7 +132,7 @@ export default function Community() {
                                     )
                                 )}
                                 {activeTab === 'following' && (
-                                    <button className='followerRemoveButton' onClick={() => handleUnfollow(community)}>Remove</button>
+                                    <button className='followerRemoveButton' onClick={() => handleUnfollow(community.community_name)}>Remove</button>
                                 )
                                 }
                                 <Link to={`/community/${community.community_id}`}>

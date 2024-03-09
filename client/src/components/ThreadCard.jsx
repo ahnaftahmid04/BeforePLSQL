@@ -334,12 +334,12 @@ export default function ThreadCard({props}) {
                     <p className='timeStamp'>{timeAgo}</p>
                     {community_name && <p className='topicName'>{community_name}</p>}
                 </div>
-                {topic_name && post_type === 'thread' && (
+                {post_type === 'thread' && (
                     <div className='threadTopic'>
                         {username === currUserName || username === 'admin' ? 
                             <button className='followerRemoveButton' onClick={() => deletePost()}>Remove</button> : 
                             <button className='followerRemoveButton' onClick={() => setModalIsOpen(true)}>Report</button>}
-                        <p className='topicName'>{topic_name}</p>
+                        {topic_name && <p className='topicName'>{topic_name}</p>}
                     </div>
                 )}
                 {post_type === 'event' && (
@@ -372,7 +372,7 @@ export default function ThreadCard({props}) {
                             <button className='followerRemoveButton' onClick={() => deletePoll()}>Remove</button> :
                             <button className='followerRemoveButton' onClick={() => setModalIsOpen(true)}>Report</button>}
                         <p className='topicName'>Poll</p>
-                        <p className='topicName'>{topic_name}</p>
+                        {topic_name && <p className='topicName'>{topic_name}</p>}
                     </div>
                 )}
                 <Modal

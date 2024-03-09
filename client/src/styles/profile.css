@@ -86,7 +86,7 @@
 .profileThreads {
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 320px);
+    max-height: calc(100vh - 350px);
     overflow-y: auto;
     gap: 20px;
     padding-right: 20px;

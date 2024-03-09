@@ -481,9 +481,9 @@ export default function Create() {
                             <option value="" disabled>
                                 Choose a community
                             </option>
-                            {followedCommunities && followedCommunities.map((community, index) => (
-                                <option key={index} value={community.name}>
-                                    {community}
+                            {followedCommunities && followedCommunities.length > 0 && followedCommunities.map((community, index) => (
+                                <option key={index} value={community.community_name}>
+                                    {community.community_name}
                                 </option>
                             ))}
                         </select>

@@ -233,7 +233,7 @@ export default function CommunityProfile() {
                     {isFollowing ?
                     <button className='profileFollowButton' onClick={() => handleUnfollow(thisCommunity.community_name)}>Unfollow</button> :
                     <button className='profileFollowButton' onClick={() => handleFollow(thisCommunity.community_name)}>Follow</button>}
-                    <h2 className='profileRank'>Rank: {rank}</h2>
+                    {rank && <h2 className='profileRank'>Rank: {rank}</h2>}
                 </div>
             </div>
             <div className="profileBody">

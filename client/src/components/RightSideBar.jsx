@@ -139,7 +139,7 @@ export default function RightSideBar() {
                 <div className='trendingTopics'>
                     <h3 className='trendingTitle'>Trending</h3>
                     <div className='trendingContent'>
-                        {globalTrending && globalTrending.map((topic, index) => (
+                        {globalTrending && globalTrending.length > 0 && globalTrending.map((topic, index) => (
                             <div key={index} className='trendingTopic'>
                                 <div className='topicDetails'>
                                     <p className='rightTopicName'>{topic.topic_name}</p>
