@@ -28,13 +28,15 @@
 }
 
 .threadTopic {
-    background-color: rgb(137, 116, 243);
-    border-radius: 8px;
     color: #fff;
     margin: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .topicName {
+    background-color: rgb(137, 116, 243);
+    border-radius: 8px;
     font-size: 14px;
     margin: 0;
     padding: 5px 10px;
@@ -81,6 +83,7 @@
 .numLikes {
     margin: 0;
     margin-left: 5px; /* Reset margin */
+    cursor: pointer;
 }
 
 .threadComments {
@@ -106,4 +109,41 @@
 .numComments {
     margin: 0;
     margin-left: 5px;
+}
+
+.allPollOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.myPollOption {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selectedPollOption {
+    width: 15px;
+    height: 15px;
+    margin-top: 12px;
+    cursor: pointer;
+    color: blue;
+}
+
+.pollOptionInput {
+    width: 15px;
+    height: 15px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.pollVoteCount {
+    margin-left: 10px;
+    color: #777;
+    font-size: 20px;
+    cursor: pointer;
 }

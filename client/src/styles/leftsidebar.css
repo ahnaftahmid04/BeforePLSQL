@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     margin-top: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     cursor: pointer;
     text-decoration: none;
     color: #fff;
@@ -75,4 +75,13 @@
 .leftsidebarLink.active {
     background-color: rgb(137, 116, 243);
     border-radius: 10px;
+}
+
+.unseenleftsidebarTitle {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(137, 116, 243);
+    padding: 5px;
+    border-radius: 5px;
 }

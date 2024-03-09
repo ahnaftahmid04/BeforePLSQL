@@ -5,7 +5,7 @@ const pool = new Pool({
     password: "dUnE1183",
     host: "localhost",
     port: 5432,
-    database: "social"
+    database: "UpdatedHallownest"
 });
 
 module.exports = pool;

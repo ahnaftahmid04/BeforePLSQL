@@ -8,6 +8,14 @@ import Create from './pages/Create';
 import Follow from './pages/Follow';
 import { useState, useEffect } from 'react';
 import Profile from './pages/Profile';
+import Community from './pages/Community';
+import Event from './pages/Event';
+import Inbox from './pages/Inbox';
+import Notification from './pages/Notification';
+import Dashboard from './pages/Dashboard';
+import Account from './pages/Account';
+import Explore from './pages/Explore';
+import CommunityProfile from './pages/CommunityProfile';
 
 function App() {
   const user = {
@@ -54,24 +62,6 @@ function App() {
         exact path="/register"
         element={isAuthenticated ? <Navigate to="/onboarding" /> : <Register setAuth={setAuth} />}
       />
-      {/*
-      <Route
-        path="/*"
-        element={isAuthenticated ? <Layout setAuth={setAuth} ><Home setAuth={setAuth} /></Layout> : <Navigate to="/login" />}
-      />
-      <Route
-        exact path='/create'
-        element={isAuthenticated ? <Layout setAuth={setAuth} ><Create /></Layout> : <Navigate to="/login" />}
-      />
-      <Route
-        exact path='/follow'
-        element={isAuthenticated ? <Layout setAuth={setAuth} ><Follow /></Layout> : <Navigate to="/login" />}
-      />
-      <Route
-        path='/profile/:userName'
-        element={<Layout setAuth={setAuth} ><Profile /></Layout>}
-      />
-      */}
       <Route
         path="/*"
         element={
@@ -82,6 +72,14 @@ function App() {
                 <Route path="/create" element={<Create />} />
                 <Route path="/follow" element={<Follow />} />
                 <Route path="/profile/:userName" element={<Profile />} />
+                <Route path='/communities' element={<Community />} />
+                <Route path='/events' element={<Event />} />
+                <Route path="/inbox" element={<Inbox />} />
+                <Route path="/notifications" element={<Notification />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/account/:userName" element={<Account />} />
+                <Route path="/explore" element={<Explore />} />
+                <Route path="/community/:communityID" element={<CommunityProfile />} />
               </Routes>
             </Layout>
           ) : (

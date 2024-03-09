@@ -1,5 +1,4 @@
 .profileHeader {
-    border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
@@ -27,6 +26,7 @@
 .profileStats {
     display: flex;
     gap: 30px;
+    cursor: pointer;
 }
 
 .profileStat {
@@ -67,7 +67,8 @@
 .mutualsContainer {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .mutualsButton {
@@ -80,4 +81,50 @@
 .mutualsName {
     font-size: 18px;
     margin: 0;
+}
+
+.profileThreads {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 320px);
+    overflow-y: auto;
+    gap: 20px;
+    padding-right: 20px;
+    max-width: 100%;
+}
+
+/* Webkit (Chrome, Safari) scrollbar styling */
+.profileThreads::-webkit-scrollbar {
+    width: 12px;
+}
+
+.profileThreads::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+    border-radius: 8px; /* Rounded corners of the thumb */
+}
+
+.profileThreads::-webkit-scrollbar-track {
+    background-color: #151618; /* Color of the track */
+}
+
+.profileViewButton {
+    width: 70px;
+    height: 25px;
+    background-color: rgb(137, 116, 243);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.profileUserContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 10px;
 }

@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 
 export default function CommentCard({props}) {
     const [timeAgo, setTimeAgo] = useState('');
-    const {description, name, created_at} = props;
+    const {description, name, created_at, comment_id, id} = props;
+    const [userId, setUserId] = useState('');
 
     const formatDate = (created_at) => {
         const date = new Date(created_at);
@@ -41,11 +42,45 @@ export default function CommentCard({props}) {
         calculateTimeAgo(created_at);
     }, [created_at]);
 
+    async function getUser() {
+        try {
+          const response = await fetch('http://localhost:5000/users/thisUser', {
+            method: 'GET',
+            headers: { token: localStorage.token},
+          });
+    
+            const parseRes = await response.json();
+            setUserId(parseRes.id);
+        } catch (err) {
+          console.error(err.message);
+        } 
+    }
+    
+    useEffect(() => {
+        getUser();
+    }, []);
+
+    const handleRemoveComment = async(e) => {
+        try {
+            const response = await fetch(`http://localhost:5000/comments/${comment_id}`, {
+                method: 'DELETE',
+                headers: { token: localStorage.token},
+            });
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
     return (
         <div className="comment">
             <div className='commentUser'>
                 <p className='commentUserName'>{name}</p>
                 <p className='commentDate'>{timeAgo}</p>
+                {userId === id && (
+                    <div className='threadTopic'>
+                        <button className='followerRemoveButton' onClick={() => handleRemoveComment()}>Remove</button>
+                    </div>
+                )}
             </div>
             <div className='commentBody'>
                 <p className='commentText'>{description}</p>

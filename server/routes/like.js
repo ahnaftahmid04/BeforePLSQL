@@ -84,6 +84,95 @@ router.get('/likedPosts',authorize,async(req,res)=>{
     }
 });
 
+router.delete('/:postId',authorize,async(req,res)=>{
+    try{
+        const userId=req.userId;
+        const q = "DELETE FROM likes WHERE likeuserid=$1 AND likepostid=$2";
+        const values = [userId, req.params.postId];
+    
+        pool.query(q, values, (err, data) => {
+            if (err) {
+                console.error(err.message);
+                return res.status(500).json(err);
+            }
+    
+            return res.status(200).json({ message: "Like deleted successfully!" });
+        });
+    }
+    catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
 
+router.get("/threads/:post_id", authorize, async (req, res) => {
+    try {
+        const { post_id } = req.params;
+        const userId = req.userId;
+
+        // Query to check if the user liked a post
+        const q = `
+            SELECT * FROM likes WHERE likeuserid = $1 AND likepostid = $2
+        `;
+        const values = [userId, post_id];
+
+        // Execute the query
+        const result = await pool.query(q, values);
+
+        // Check if any rows are returned
+        if (result.rows.length === 0) {
+            // If no rows are returned, the user did not like the post
+            return res.status(200).json([]);
+        } else {
+            // If rows are returned, the user liked the post
+            return res.status(200).json(result.rows);
+        }
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
+
+router.delete('/threads/:postId',authorize,async(req,res)=>{
+    try{
+        const userId=req.userId;
+        const q = "DELETE FROM likes WHERE likeuserid=$1 AND likepostid=$2";
+        const values = [userId, req.params.postId];
+    
+        pool.query(q, values, (err, data) => {
+            if (err) {
+                console.error(err.message);
+                return res.status(500).json(err);
+            }
+    
+            return res.status(200).json({ message: "Like deleted successfully!" });
+        });
+    }
+    catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
+
+//  Show all users who liked a post
+router.get('/likedUsers/:postId',authorize,async(req,res)=>{
+    try{
+        const postId=req.params.postId;
+        const q =
+        `SELECT u.username,u.name
+        FROM users AS u 
+        JOIN likes AS l ON (l.likeuserid=u.id) WHERE likepostid = $1`;
+        
+    pool.query(q, [postId], (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.status(200).json(data.rows);
+    });
+
+    }
+    catch(err){
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
 
 module.exports=router;

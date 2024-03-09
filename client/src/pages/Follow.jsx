@@ -44,7 +44,6 @@ export default function Follow() {
             });
             const parseResponse = await response.json();
             setMyUsers(parseResponse.followings);
-            console.log(myUsers);
         } catch (error) {
             console.error(error.message);
         }
@@ -58,7 +57,6 @@ export default function Follow() {
             });
             const parseResponse = await response.json();
             setMyUsers(parseResponse.followers);
-            console.log(parseResponse.followers);
         } catch (error) {
             console.error(error.message);
         }
@@ -67,7 +65,6 @@ export default function Follow() {
     const handleFollow = async (username) => {
         try {
             const body = { "followedusername": username };
-            console.log(body);
             const response = await fetch('http://localhost:5000/relationships/follow', {
                 method: 'POST',
                 headers: {token: localStorage.token, 'Content-Type': 'application/json'},
@@ -82,7 +79,6 @@ export default function Follow() {
     const handleUnfollow = async (username) => {
         try {
             const body = { "followedusername": username };
-            console.log(body);
             const response = await fetch('http://localhost:5000/relationships/unfollow', {
                 method: 'DELETE',
                 headers: {token: localStorage.token, 'Content-Type': 'application/json'},
@@ -105,6 +101,18 @@ export default function Follow() {
     useEffect(() => {
         handleFollowers();
     }, []);
+
+    const handleRemoveFollower = async (username) => {
+        try {
+            const response = await fetch(`http://localhost:5000/relationships/followers/${username}`, {
+                method: 'DELETE',
+                headers: {token: localStorage.token}
+            });
+            const parseResponse = await response.json();
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
 
     return (
         <div className="followContainer">
@@ -148,13 +156,15 @@ export default function Follow() {
                                 <li key={index} >{user.name}</li>
                             </div>
                             <div className='otherUserButtons'>
-                                {user.followeruserid ? (
-                                    <button className='userFollowButton' onClick={() => handleFollow(user.username)}>Follow</button>
-                                ): (
-                                    <button className='userUnfollowButton' onClick={() => handleUnfollow(user.username)}>Unfollow</button>
+                                {activeTab !== 'followers' && (
+                                    user.followeduserid || user.followeruserid ? (
+                                        <button className='userUnfollowButton' onClick={() => handleUnfollow(user.username)}>Unfollow</button>
+                                    ): (
+                                        <button className='userFollowButton' onClick={() => handleFollow(user.username)}>Follow</button>
+                                    )
                                 )}
                                 {activeTab === 'followers' && (
-                                    <button className='followerRemoveButton'>Remove</button>
+                                    <button className='followerRemoveButton' onClick={() => handleRemoveFollower(user.username)}>Remove</button>
                                 )
                                 }
                                 <Link to={`/profile/${user.username}`}>

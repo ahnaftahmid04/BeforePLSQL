@@ -10,11 +10,6 @@ export const sidebarLinks = [
     label: "Events",
   },
   {
-    imgURL: "../assets/heart.svg",
-    route: "/explore",
-    label: "Explore",
-  },
-  {
     imgURL: "../assets/create.svg",
     route: "/create",
     label: "Create",
@@ -29,6 +24,21 @@ export const sidebarLinks = [
     route: "/follow",
     label: "Following",
   },
+  {
+    imgURL: "../assets/realMessages.svg",
+    route: "/inbox",
+    label: "Messages",
+  },
+  {
+    imgURL: "../assets/realNotifications.png",
+    route: "/notifications",
+    label: "Notifications",
+  },
+  {
+    imgURL: "../assets/settings.svg",
+    route: "/dashboard",
+    label: "Dashboard",
+  }
 ];
 
 export const profileTabs = [
@@ -296,4 +306,67 @@ export const allComments = [
     description: "I will become a brave warrior of the sea!",
     timeStamp: "5 hours ago",
   },
+];
+
+export const allCountries = [
+  {
+    name: 'USA',
+  },
+  {
+    name: 'UK',
+  },
+  {
+    name: 'France',
+  },
+  {
+    name: 'Japan',
+  },
+  {
+    name: 'Canada',
+  },
+  {
+    name: 'Germany',
+  },
+  {
+    name: 'Brazil',
+  },
+  {
+    name: 'Australia',
+  },
+  {
+    name: 'Russia',
+  }
+];
+
+export const allCities = [
+  {
+    name: 'New York',
+  },
+  {
+    name: 'Los Angeles',
+  },
+  {
+    name: 'London',
+  },
+  {
+    name: 'Paris',
+  },
+  {
+    name: 'Tokyo',
+  },
+  {
+    name: 'Sydney',
+  },
+  {
+    name: 'Berlin',
+  },
+  {
+    name: 'Toronto',
+  },
+  {
+    name: 'Moscow',
+  },
+  {
+    name: 'Rio de Janeiro',
+  }
 ];

@@ -25,6 +25,18 @@ app.use("/relationships", require("./routes/relationship"));
 app.use("/comments", require("./routes/comment"));
 // like route
 app.use("/likes", require("./routes/like"));
+// community route
+app.use("/communities", require("./routes/community"));
+// topic route
+app.use("/topics", require("./routes/topics"));
+// message route
+app.use("/messages", require("./routes/messages"));
+// location route
+app.use("/locations", require("./routes/location"));
+// notification route
+app.use("/notifications", require("./routes/notification"));
+// verification route
+app.use("/admin", require("./routes/admin"));
 
 app.listen(5000, () => {
     console.log('Server is running on port 5000');

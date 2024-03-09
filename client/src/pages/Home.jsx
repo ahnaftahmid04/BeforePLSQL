@@ -14,15 +14,46 @@ export default function Home({setAuth}) {
 
     const [myThreads, setMyThreads] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [selectedOption, setSelectedOption] = useState('All');
 
     const getMyThreads = async() => {
         try {
-            const response = await fetch('http://localhost:5000/posts/', {
-                method: 'GET',
-                headers: {token: localStorage.token}
-            });
-            const parseResponse = await response.json();
-            setMyThreads(parseResponse);
+            if(selectedOption === 'All') {
+                const response = await fetch('http://localhost:5000/posts/news/feed', {
+                    method: 'GET',
+                    headers: {token: localStorage.token}
+                });
+                const parseResponse = await response.json();
+                setMyThreads(parseResponse);
+            } else if(selectedOption === 'Community') {
+                const response = await fetch('http://localhost:5000/posts/news/feed/community', {
+                    method: 'GET',
+                    headers: {token: localStorage.token}
+                });
+                const parseResponse = await response.json();
+                setMyThreads(parseResponse);
+            } else if(selectedOption === 'Events') {
+                const response = await fetch('http://localhost:5000/posts/news/feed/events', {
+                    method: 'GET',
+                    headers: {token: localStorage.token}
+                });
+                const parseResponse = await response.json();
+                setMyThreads(parseResponse);
+            } else if(selectedOption === 'Following') {
+                const response = await fetch('http://localhost:5000/posts/news/feed/following', {
+                    method: 'GET',
+                    headers: {token: localStorage.token}
+                });
+                const parseResponse = await response.json();
+                setMyThreads(parseResponse);
+            } else if(selectedOption === 'Interests') {
+                const response = await fetch('http://localhost:5000/posts/postsAboutInterestingTopics', {
+                    method: 'GET',
+                    headers: {token: localStorage.token}
+                });
+                const parseResponse = await response.json();
+                setMyThreads(parseResponse);
+            }
         } catch (err) {
             console.error(err.message);
         } finally {
@@ -34,12 +65,16 @@ export default function Home({setAuth}) {
         getMyThreads();
     }, []);
 
+    useEffect(() => {
+        getMyThreads();
+    }, [selectedOption]);
+
     return (
         <MainBar>
             <div className="homeHeader">
                 <h1 className="homeTitle">Home Feed</h1>
                 <div className="threadOptionsContainer">
-                    <select id="threadOptions" name="threadOptions">
+                    <select id="threadOptions" name="threadOptions" onChange={(e) => setSelectedOption(e.target.value)}>
                         {threadOptions.map((option) => (
                             <option key={option} value={option}>
                                 {option}

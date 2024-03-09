@@ -26,6 +26,29 @@
     color: white;
 }
 
+.eventNavbar {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.eventNavbar button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 18px;
+}
+
+.eventNavbar button.activeTab {
+    background-color: rgb(137, 116, 243);
+    color: white;
+}
+
 .userSearchInput {
     padding: 8px;
     margin-bottom: 20px;
@@ -45,6 +68,13 @@
     margin: 0;
     max-height: calc(100vh - 225px);
     overflow-y: auto; 
+}
+
+.eventList {
+    margin: 0;
+    max-height: calc(100vh - 175px);
+    overflow-y: auto; 
+    overflow-x: hidden;
 }
 
 .otherUserContainer {
@@ -133,15 +163,15 @@
     background-color: #151618; 
 }
 
-.userList {
-    scrollbar-width: thin;
+.eventList::-webkit-scrollbar {
+    width: 12px;
 }
 
-.userList::-moz-scrollbar-thumb {
+.eventList::-webkit-scrollbar-thumb {
     background-color: #888; 
     border-radius: 8px; 
 }
 
-.userList::-moz-scrollbar-track {
+.eventList::-webkit-scrollbar-track {
     background-color: #151618; 
 }
